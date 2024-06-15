@@ -1,0 +1,20 @@
+package components
+
+templ Layout(children ...templ.Component) {
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8"/> 
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title> Wails3 x Templ</title>
+            <link href="files/tailwind.css" type="text/css" rel="stylesheet" />
+        </head>
+        <body class="bg-zinc-950 text-slate-50 w-screen h-screen flex flex-col">
+            <main class="flex-grow flex flex-row h-auto w-full">
+            for _, child := range children {
+                @child
+            }
+            </main>
+        </body>
+    </html>
+}
